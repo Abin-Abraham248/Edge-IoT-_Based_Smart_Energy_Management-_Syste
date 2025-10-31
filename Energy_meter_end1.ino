@@ -1,6 +1,6 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
-#include "ACS712.h"s
+#include "ACS712.h"
 #include <ZMPT101B.h>
 
 // WiFi credentials
@@ -8,7 +8,7 @@ const char* ssid = "qwerty";
 const char* password = "12345678";
 
 // Edge device IP (MQTT broker)
-const char* mqtt_server = "192.168.6.213";  
+const char* mqtt_server = "192.168.x.xxx";  
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -69,8 +69,8 @@ void loop() {
   if (!client.connected()) reconnect();
   client.loop();
 
-  current = 0.0905;//readCurrent();
-  volt = 232;
+  current = readCurrent();
+  volt =  readVoltage() ;
 
   // Build JSON payload
   String payload = "{\"voltage\":" + String(volt,2) +
@@ -78,5 +78,5 @@ void loop() {
 
   client.publish("ems/node1/data", payload.c_str());
 
-  delay(10000); // publish every 2s
+  delay(10000); // publish every 10s
 }
