@@ -59,7 +59,7 @@ The processed data is visualized on the **Adafruit IO Cloud Dashboard**, providi
 
 
 ## 🧭 Circuit Diagram
-> ![Circuit Diagram](sems.jpg)
+> ![Circuit Diagram](circuit.jpg)
 
 
 ---
@@ -103,7 +103,7 @@ Example JSON payload from nodes:
    - Run it on your Raspberry Pi:
   ```bash
   pip install paho-mqtt adafruit-io
-  python3 edge_cloud.py
+  python3 edge_code.py
   ```
 ## 💻 Node Firmware (ESP32)
 
