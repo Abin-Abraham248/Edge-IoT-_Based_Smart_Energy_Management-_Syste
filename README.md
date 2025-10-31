@@ -59,7 +59,7 @@ The processed data is visualized on the **Adafruit IO Cloud Dashboard**, providi
 
 
 ## 🧭 Circuit Diagram
-> ![Circuit Diagram](images/circuit_diagram.png)
+> ![Circuit Diagram](sems.jpg)
 
 
 ---
@@ -154,10 +154,7 @@ else:
 - Support for solar and battery monitoring
 - Add local web dashboard for offline visualization
 - Integration with Google Assistant / Alexa
-
-## 🧾 License
-This project is licensed under the [MIT License](LICENSE) — feel free to modify and share.
-
+  
 © 2025 Abin
 
 
