@@ -8,12 +8,12 @@ const char* ssid = "qwerty";
 const char* password = "12345678";
 
 // Edge device IP (MQTT broker)
-const char* mqtt_server = "192.168.6.213";  
+const char* mqtt_server = "192.xxx.x.xxx";  
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-#define RELAY_PIN 25 // different relay pin for Node2
+#define RELAY_PIN 25  
 
 // Sensors
 ACS712 ACS(34, 3.3, 4095, 100);
@@ -70,7 +70,7 @@ void loop() {
   if (!client.connected()) reconnect();
   client.loop();
 
-  current = 0.0412;//readCurrent();
+  current = readCurrent();
   volt = readVoltage();
   
 
@@ -80,5 +80,5 @@ void loop() {
 
   client.publish("ems/node2/data", payload.c_str());
 
-  delay(10000); // publish every 2s
+  delay(10000); // publish every 10s
 }
